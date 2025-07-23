@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Pantalon de vestir",
+    "description": "Pantalon 100% algodón",
+    "code": "PAN11",
+    "price": 1400,
+    "stock": 40,
+    "category": "Ropa",
+    "thumbnails": [
+      "/images/pantalon1.jpg",
+      "/images/pantalon2.jpg"
+    ],
+    "id": 726719,
+    "status": true
+  },
+  {
+    "title": "Camiseta oficial",
+    "description": "Camiseta de poliester",
+    "code": "CAMI123",
+    "price": 950,
+    "stock": 60,
+    "category": "Ropa",
+    "thumbnails": [
+      "/images/camiseta1.jpg",
+      "/images/camiseta2.jpg"
+    ],
+    "id": 936258
+  }
+]
