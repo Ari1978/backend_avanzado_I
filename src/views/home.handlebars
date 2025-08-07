@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="/css/home.css" />
+
+<h1 class="store-title">🛒 Tienda de Electrónica</h1>
+
+<div class="product-list">
+  {{#each products}}
+    <div class="product-card">
+      <img src="{{this.image}}" alt="{{this.name}}" class="product-image" />
+      <div class="product-details">
+        <h2 class="product-name">{{this.name}}</h2>
+        <p><strong>Categoría:</strong> {{this.category}}</p>
+        <p><strong>Precio:</strong> ${{this.price}}</p>
+        <p><strong>Stock:</strong> {{this.stock}}</p>
+        <p class="description">{{this.description}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<!-- Paginación -->
+<div class="pagination">
+  {{#if hasPrevPage}}
+    <a href="/home?page={{prevPage}}" class="page-btn">⬅ Anterior</a>
+  {{/if}}
+
+  <span class="page-info">Página {{currentPage}} de {{totalPages}}</span>
+
+  {{#if hasNextPage}}
+    <a href="/home?page={{nextPage}}" class="page-btn">Siguiente ➡</a>
+  {{/if}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

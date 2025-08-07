@@ -1,0 +1,144 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  background-color: #1e88e5;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-img {
+  width: 100px;
+  margin-top: 1rem;
+}
+
+/* Navegación */
+.navbar {
+  background-color: #1565c0;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor de productos */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Tarjeta de producto */
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  margin: 0.3rem 0;
+}
+
+.add-to-cart-btn {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: #43a047;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2e7d32;
+}
+
+.electronics-banner {
+  width: 100%;
+  overflow: hidden; /* Para evitar scroll si la imagen es muy grande */
+}
+
+.electronics-banner img {
+  width: 100%;     /* Que ocupe todo el ancho del contenedor */
+  height: auto;    /* Mantener proporción */
+  display: block;  /* Elimina espacio blanco debajo de la imagen */
+  object-fit: cover; /* Recorta si es necesario para cubrir el área */
+  max-height: 400px; /* Altura máxima para que no sea demasiado grande */
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #1e88e5;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-img {
+  width: 40px;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}

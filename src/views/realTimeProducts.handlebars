@@ -1,0 +1,64 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Productos en Tiempo Real</title>
+    <link rel="stylesheet" href="/css/realTime.css" />
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Lista de productos</h1>
+
+      <form id="form-create-product">
+        <h3>Crear nuevo producto</h3>
+        <input type="text" name="title" placeholder="Título" required />
+        <input
+          type="text"
+          name="description"
+          placeholder="Descripción"
+          required
+        />
+        <input type="text" name="code" placeholder="Código" required />
+        <input type="number" name="price" placeholder="Precio" required />
+        <input type="number" name="stock" placeholder="Stock" required />
+        <input type="text" name="category" placeholder="Categoría" required />
+        <input type="text" name="image" placeholder="URL Imagen" />
+        <button type="submit">Crear Producto</button>
+      </form>
+
+      <form id="form-delete-product">
+        <h3>Eliminar producto por ID</h3>
+        <input
+          type="text"
+          id="delete-id"
+          placeholder="ID producto"
+          required
+        />
+        <button type="submit">Eliminar Producto</button>
+      </form>
+
+      <div class="product-list" id="realtime-products">
+        {{#each products}}
+          <div class="product-card" data-id="{{this.id}}">
+            <img src="{{this.image}}" alt="{{this.title}}" />
+            <h2 class="product-title">{{this.title}}</h2>
+            <p class="product-stock"><strong></strong>
+              {{this.description}}</p>
+            <p class="product-price"><strong>Precio:</strong>
+              ${{this.price}}</p>
+            <p class="product-stock"><strong>Stock:</strong> {{this.stock}}</p>
+            <p class="product-stock"><strong>ID:</strong> {{this.id}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/realTime.js"></script>
+
+  </body>
+</html>
+
+
+

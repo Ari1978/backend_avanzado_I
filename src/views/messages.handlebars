@@ -1,0 +1,26 @@
+<div>
+  <h1>ChatBox v_2.0.0</h1>
+
+  <h2>Nombre: <span id="myName"></span></h2>
+
+  <!-- input -->
+  <div>
+    <p>
+      Escribe un mensaje en nuestro chatBox
+      <input id="textoEntrada" type="text" />
+      <button id="closeChatBox">Close Chat</button>
+    </p>
+  </div>
+
+  <!-- Renderizado -->
+  <div>
+    <h3>BoxMessage</h3>
+    <h3>-----------</h3>
+    <div id="messageLogs"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.v1.js"></script>
+

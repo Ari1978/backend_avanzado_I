@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/carts.css">
+
+<h1>🛒 Lista de Carritos</h1>
+
+{{#each carts}}
+  <div class="cart-card">
+    <h2>ID del carrito: {{_id}}</h2>
+
+    <ul>
+      {{#each products}}
+        <li>
+          <strong>Producto:</strong> {{this.product.title}} <br>
+          <strong>Cantidad:</strong> {{this.quantity}} <br>
+          <button onclick="removeProductFromCart('{{../_id}}', '{{this.product._id}}')">❌ Quitar producto</button>
+        </li>
+      {{/each}}
+    </ul>
+
+    <button onclick="emptyCart('{{_id}}')">🗑 Vaciar carrito</button>
+    <button onclick="deleteCart('{{_id}}')">❌ Eliminar carrito</button>
+    <hr>
+  </div>
+{{/each}}
+
+<script>
+  async function deleteCart(cartId) {
+    const res = await fetch(`/api/carts/${cartId}`, { method: "DELETE" });
+    const data = await res.json();
+    alert(data.payload || data.message);
+    location.reload();
+  }
+
+  async function emptyCart(cartId) {
+    const res = await fetch(`/api/carts/${cartId}/products`, { method: "DELETE" });
+    const data = await res.json();
+    alert(data.payload || data.message);
+    location.reload();
+  }
+
+  async function removeProductFromCart(cartId, productId) {
+    const res = await fetch(`/api/carts/${cartId}/product/${productId}`, { method: "DELETE" });
+    const data = await res.json();
+    alert(data.payload || data.message);
+    location.reload();
+  }
+</script>
+
